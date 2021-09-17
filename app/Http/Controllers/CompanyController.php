@@ -104,8 +104,8 @@ class CompanyController extends Controller
      */
     public function destroy($id)
     {
-            $company = Company::find(\Crypt::decrypt($id));    
-            $company->delete();
-            return redirect()->route('company.index')->with('status','Existing Company is deleted from your data');
+        $company = Company::find(\Crypt::decrypt($id));    
+        $company->delete();
+        return redirect()->route('company.index')->with('status','Existing Company is deleted from your data');
     }
 }

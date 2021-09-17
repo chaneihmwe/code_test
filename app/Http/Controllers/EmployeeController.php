@@ -71,7 +71,7 @@ class EmployeeController extends Controller
             "password" => "required|min:8|max:255",
             "company_id" => "required",
             "departments" => "required",
-            "phone" => "required|numeric|max:30",
+            "phone" => "required|max:30",
         ]);
         DB::beginTransaction();
             try {
@@ -185,7 +185,7 @@ class EmployeeController extends Controller
     {
         $employee = Employee::find(\Crypt::decrypt($id));         
         $employee->delete();
-        return redirect()->route('emp$employee.index')->with('status','Existing Employee is deleted from your data');
+        return redirect()->route('employee.index')->with('status','Existing Employee is deleted from your data');
     }
 
     public function employeesByCSV(Request $request)

@@ -100,6 +100,6 @@ class DepartmentController extends Controller
     {
         $department = Department::find(\Crypt::decrypt($id));
         $department->delete();
-       return redirect()->route('department.index')->with('status','Existing Department is deleted from your data');
+        return redirect()->route('department.index')->with('status','Existing Department is deleted from your data');
     }
 }

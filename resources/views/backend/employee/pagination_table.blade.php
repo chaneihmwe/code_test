@@ -18,7 +18,7 @@
             <tr>
                 <td>{{$key + $employees->firstItem()}}</td>
                 <td>{{$employee->user->user_name}}</td>
-                <td>{{$employee->company->name}}</td>
+                <td>@if(isset($employee->company)){{$employee->company->name}}@endif</td>
                 <td class="align-middle">
                 @foreach($employee->departments as $department)
                     <span class="badge badge-info">{{$department->name}}</span>
